@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const CDN_BASE = process.env.NODE_ENV === 'production' 
-  ? 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main'
+  ? 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main/build'
   : '';
 
 const Gallery = () => {

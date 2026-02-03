@@ -1,25 +1,16 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useNavigate } from "react-router-dom";
 
 const CDN_BASE = process.env.NODE_ENV === 'production' 
-  ? 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main'
+  ? 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main/build'
   : '';
 
 const Home = () => {
-  const navigate = useNavigate();
-  const [eventPhotos, setEventPhotos] = useState([]);
   const [importantLinks, setImportantLinks] = useState([]);
   const [coordinators, setCoordinators] = useState([]);
   const [sisterCenters, setSisterCenters] = useState([]);
 
   useEffect(() => {
-    fetch(`${CDN_BASE}/data/nsm-database.eventphotos.json`)
-      .then((res) => res.json())
-      .then((data) => setEventPhotos(data))
-      .catch((err) => console.error("Event photos error:", err));
-
     fetch(`${CDN_BASE}/data/nsm-database.importantlinks.json`)
       .then((res) => res.json())
       .then((data) => setImportantLinks(data))

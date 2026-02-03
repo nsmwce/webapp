@@ -1,7 +1,5 @@
 import React from "react";
-import {FaEnvelope } from "react-icons/fa";
-import { MdOutlineContactMail } from "react-icons/md";
-import { FaMapPin } from "react-icons/fa";
+import { FaEnvelope, FaMapPin } from "react-icons/fa";
 const Contact = () => {
   return (
     <div style={styles.container}>

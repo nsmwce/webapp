@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BUILD_INDEX = path.join(__dirname, '..', 'build', 'index.html');
-const CDN_BASE = 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main';
+const CDN_BASE = 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main/build';
 
 console.log('========================================');
 console.log('Verifying CDN URLs in build/index.html');

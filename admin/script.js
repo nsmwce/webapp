@@ -469,7 +469,7 @@ async function purgeCdnCache() {
     const confirm3 = confirm(
         'Final confirmation:\n\n' +
         'You are about to purge the CDN cache for:\n' +
-        'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main\n\n' +
+        'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main/build\n\n' +
         'This may take 5-10 minutes to propagate.\n\n' +
         'Are you absolutely sure?'
     );
@@ -480,8 +480,8 @@ async function purgeCdnCache() {
     }
     
     try {
-        // Note: jsDelivr purge endpoint
-        const purgeUrl = 'https://purge.jsdelivr.net/gh/nsmwce/webapp@main';
+        // Note: jsDelivr purge endpoint - purge the build folder
+        const purgeUrl = 'https://purge.jsdelivr.net/gh/nsmwce/webapp@main/build';
         
         const response = await fetch(purgeUrl, {
             method: 'POST'

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoInformationCircle } from "react-icons/io5";
-import { FaHome, FaBook, FaCalendarAlt } from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
 import { MdOutlineContactMail } from "react-icons/md";
 import { MdPhotoLibrary } from "react-icons/md";
 import { PiChalkboardTeacherBold } from "react-icons/pi";
