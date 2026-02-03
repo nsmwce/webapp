@@ -51,14 +51,25 @@ const indexPath = path.join(BUILD_DIR, 'index.html');
 if (fs.existsSync(indexPath)) {
     let html = fs.readFileSync(indexPath, 'utf8');
     
-    // Replace relative paths with CDN URLs
-    // Static assets (JS)
+    console.log('Updating index.html with CDN URLs...');
+    
+    // Replace all /static/ paths (JS, CSS, media)
+    html = html.replace(
+        /(<script[^>]+src=")\/static\//g,
+        `$1${CDN_BASE}/static/`
+    );
+    
+    html = html.replace(
+        /(<link[^>]+href=")\/static\//g,
+        `$1${CDN_BASE}/static/`
+    );
+    
+    // Also handle any src="/static/ without script tag
     html = html.replace(
         /src="\/static\//g,
         `src="${CDN_BASE}/static/`
     );
     
-    // Static assets (CSS)
     html = html.replace(
         /href="\/static\//g,
         `href="${CDN_BASE}/static/`
@@ -75,19 +86,20 @@ if (fs.existsSync(indexPath)) {
         `href="${CDN_BASE}/favicon.ico"`
     );
     
-    // Logo files
+    // Logo and image files in root
     html = html.replace(
-        /src="\/([^"]+\.(png|jpg|svg))"/g,
-        `src="${CDN_BASE}/$1"`
+        /(<link[^>]+href=")\/([^"]+\.(png|jpg|svg|ico))"/g,
+        `$1${CDN_BASE}/$2"`
     );
     
     html = html.replace(
-        /href="\/([^"]+\.(png|jpg|svg))"/g,
-        `href="${CDN_BASE}/$1"`
+        /(<img[^>]+src=")\/([^"]+\.(png|jpg|svg))"/g,
+        `$1${CDN_BASE}/$2"`
     );
     
     fs.writeFileSync(indexPath, html, 'utf8');
-    console.log('Updated index.html with CDN URLs');
+    console.log('✓ Updated index.html with CDN URLs');
+    console.log(`  All /static/ paths now point to: ${CDN_BASE}/static/`);
 }
 
 // Create README for build folder
