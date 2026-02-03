@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const CDN_BASE = process.env.NODE_ENV === 'production' 
-  ? 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main/build'
-  : '';
+const CDN_BASE = 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main/build';
 
 const Materials = () => {
   const { topicId } = useParams();

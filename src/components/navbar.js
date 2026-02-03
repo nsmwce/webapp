@@ -5,9 +5,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { MdOutlineContactMail, MdPhotoLibrary } from "react-icons/md";
 import { PiChalkboardTeacherBold } from "react-icons/pi";
 
-const CDN_BASE = process.env.NODE_ENV === 'production' 
-  ? 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main/build'
-  : '';
+const CDN_BASE = 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main/build';
 
 const navItems = [
   { label: "About Us", path: "/#aboutus", icon: <IoInformationCircle /> },
