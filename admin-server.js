@@ -40,6 +40,36 @@ const upload = multer({
   }
 });
 
+// Configure multer for file uploads (PDFs, documents)
+const fileStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const filesDir = path.join(__dirname, 'public', 'files');
+    if (!fs.existsSync(filesDir)) {
+      fs.mkdirSync(filesDir, { recursive: true });
+    }
+    cb(null, filesDir);
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.random().toString(36).substring(7);
+    const ext = path.extname(file.originalname);
+    const collection = req.body.collection || 'file';
+    cb(null, `${collection}-${uniqueSuffix}${ext}`);
+  }
+});
+
+const uploadFile = multer({ 
+  storage: fileStorage,
+  limits: { fileSize: 50 * 1024 * 1024 }, // 50MB limit for documents
+  fileFilter: (req, file, cb) => {
+    const allowed = /\.(pdf|doc|docx|xls|xlsx|ppt|pptx|txt)$/i;
+    if (allowed.test(file.originalname)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only document files are allowed (PDF, DOC, XLS, PPT, TXT)'));
+    }
+  }
+});
+
 // Serve admin UI
 app.use(express.static(path.join(__dirname, 'admin')));
 
@@ -165,6 +195,24 @@ app.post('/api/upload-image', upload.single('image'), (req, res) => {
 // Serve images for preview in admin UI
 app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
 
+// POST upload file (PDF, documents)
+app.post('/api/upload-file', uploadFile.single('file'), (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: 'No file uploaded' });
+    }
+    res.json({ 
+      filename: req.file.filename,
+      path: `/files/${req.file.filename}`
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Serve files for preview/download in admin UI
+app.use('/files', express.static(path.join(__dirname, 'public', 'files')));
+
 // POST trigger build
 app.post('/api/build', (req, res) => {
   exec('npm run build', (error, stdout, stderr) => {
@@ -189,6 +237,7 @@ app.listen(PORT, () => {
   console.log('\nFeatures:');
   console.log('- Manage all data collections');
   console.log('- Upload images (saved to public/images/)');
+  console.log('- Upload files/PDFs (saved to public/files/)');
   console.log('- Trigger builds');
   console.log('- Purge CDN cache\n');
 });

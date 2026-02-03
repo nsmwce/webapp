@@ -18,7 +18,8 @@ const SCHEMAS = {
         { name: 'year', type: 'text', label: 'Year', required: true },
         { name: 'location', type: 'text', label: 'Location', required: true },
         { name: 'participants', type: 'number', label: 'Participants', required: true },
-        { name: 'summary', type: 'textarea', label: 'Summary', required: true }
+        { name: 'summary', type: 'textarea', label: 'Summary', required: true },
+        { name: 'file', type: 'file', label: 'Report PDF', required: false }
     ],
     eventphotos: [
         { name: 'caption', type: 'text', label: 'Caption', required: true },
@@ -26,7 +27,8 @@ const SCHEMAS = {
     ],
     importantlinks: [
         { name: 'title', type: 'text', label: 'Title', required: true },
-        { name: 'url', type: 'url', label: 'URL', required: true }
+        { name: 'url', type: 'url', label: 'URL', required: false },
+        { name: 'file', type: 'file', label: 'File (PDF)', required: false }
     ],
     materials: [
         { name: 'title', type: 'text', label: 'Title', required: true },
@@ -135,6 +137,13 @@ function renderTable(data) {
                     html += `<td class="image-cell"><img src="${imgData}" alt="Preview"></td>`;
                 } else {
                     html += '<td>No image</td>';
+                }
+            } else if (field.type === 'file') {
+                const filename = item[field.name];
+                if (filename) {
+                    html += `<td><a href="/files/${filename}" target="_blank" style="color: #007bff;">${filename}</a></td>`;
+                } else {
+                    html += '<td>No file</td>';
                 }
             } else {
                 html += `<td>${item[field.name] || ''}</td>`;
@@ -254,6 +263,20 @@ function generateForm(item = null) {
             }
             
             group.appendChild(preview);
+        } else if (field.type === 'file') {
+            input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt';
+            
+            // Add note about existing file
+            if (item && item[field.name]) {
+                const note = document.createElement('p');
+                note.style.fontSize = '12px';
+                note.style.color = '#666';
+                note.style.marginBottom = '5px';
+                note.innerHTML = `Current: <a href="/files/${item[field.name]}" target="_blank">${item[field.name]}</a> (leave empty to keep)`;
+                group.appendChild(note);
+            }
         } else {
             input = document.createElement('input');
             input.type = field.type;
@@ -261,7 +284,7 @@ function generateForm(item = null) {
         }
         
         input.name = field.name;
-        if (field.type !== 'image') {
+        if (field.type !== 'image' && field.type !== 'file') {
             input.required = field.required;
         }
         input.id = `input-${field.name}`;
@@ -301,6 +324,28 @@ async function saveItem() {
                 uploadFormData.append('collection', currentCollection);
                 
                 const uploadResponse = await fetch('/api/upload-image', {
+                    method: 'POST',
+                    body: uploadFormData
+                });
+                
+                const uploadResult = await uploadResponse.json();
+                formData[field.name] = uploadResult.filename;
+            } else if (editingItemId) {
+                // Keep existing filename
+                const item = currentData.find(i => i._id.$oid === editingItemId);
+                if (item) {
+                    formData[field.name] = item[field.name];
+                }
+            }
+        } else if (field.type === 'file') {
+            const file = input.files[0];
+            if (file) {
+                // Upload file and get filename
+                const uploadFormData = new FormData();
+                uploadFormData.append('file', file);
+                uploadFormData.append('collection', currentCollection);
+                
+                const uploadResponse = await fetch('/api/upload-file', {
                     method: 'POST',
                     body: uploadFormData
                 });
