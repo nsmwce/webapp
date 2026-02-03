@@ -1,0 +1,89 @@
+/* Core wrapper for entire App */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Logo styling */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  user-select: none;
+  max-width: 80%;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Header section of App */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #ffffff;
+  font-size: calc(16px + 1.5vmin);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Anchor link styling */
+.App-link {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover,
+.App-link:focus {
+  color: #4fc3f7;
+  outline: none;
+}
+
+/* Logo rotation animation */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------------------------- */
+/*      MEDIA QUERIES          */
+/* ---------------------------- */
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(14px + 1vmin);
+    padding: 1.5rem;
+  }
+
+  .App-logo {
+    height: 30vmin;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header {
+    font-size: calc(13px + 1vmin);
+    padding: 1rem;
+  }
+
+  .App-logo {
+    height: 25vmin;
+  }
+}

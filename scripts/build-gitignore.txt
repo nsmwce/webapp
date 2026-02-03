@@ -1,0 +1,13 @@
+# This .gitignore will be copied to build/ folder
+# Add this to build/.gitignore after git init
+
+# Don't ignore anything - we want everything in the CDN repo
+# But you can add this if needed:
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

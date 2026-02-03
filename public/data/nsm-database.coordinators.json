@@ -1,0 +1,123 @@
+[
+  {
+    "_id": {
+      "$oid": "68c05e1ec67b5e2007988de1"
+    },
+    "name": "Dr. D. B. Kulkarni",
+    "email": "dinesh.kulkarni@walchandsangli.ac.in",
+    "url": "https://www.walchandsangli.ac.in/Departments/InformationTechnology/Faculty/DBK%20RESUME.pdf",
+    "designation": "Nodal Centre Head",
+    "photo": "coordinator-68c05e1ec67b5e2007988de1.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68c05e8ec67b5e2007988de3"
+    },
+    "name": "Dr. U. B. Chavan",
+    "email": "umesh.chavan@walchandsangli.ac.in",
+    "url": "https://www.walchandsangli.ac.in/Departments/InformationTechnology/Faculty/UBC%20Resume.pdf",
+    "designation": "Co-ordinator",
+    "photo": "coordinator-68c05e8ec67b5e2007988de3.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68c05f53c67b5e2007988de5"
+    },
+    "name": "Dr. Medha Shaha",
+    "email": "medha.shaha@walchandsangli.ac.in",
+    "url": "",
+    "designation": "Co-ordinator",
+    "photo": "coordinator-68c05f53c67b5e2007988de5.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68c05f97c67b5e2007988de7"
+    },
+    "name": "Ms. A. S. Pawar",
+    "email": "aprupa.pawar@walchandsangli.ac.in",
+    "url": "",
+    "designation": "Co-ordinator",
+    "photo": "coordinator-68c05f97c67b5e2007988de7.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68c06084c67b5e2007988de9"
+    },
+    "name": "Mr. J. N. Khandare",
+    "email": "jayendra.khandare@walchandsangli.ac.in",
+    "url": "",
+    "designation": "Project Staff",
+    "photo": "coordinator-68c06084c67b5e2007988de9.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68c060f8c67b5e2007988df4"
+    },
+    "name": "Mr. V. S. Bhandare",
+    "email": "vinod.bhandare@walchandsangli.ac.in",
+    "url": "",
+    "designation": "Project Staff",
+    "photo": "coordinator-68c060f8c67b5e2007988df4.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68c06136c67b5e2007988df6"
+    },
+    "name": "Mrs. S. S. Suryawanshi",
+    "email": "sanjivani.suryawanshi@walchandsangli.ac.in",
+    "url": "",
+    "designation": "Project Staff",
+    "photo": "coordinator-68c06136c67b5e2007988df6.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68c061a5c67b5e2007988df8"
+    },
+    "name": "Mr. Devesh S. Talegaokar",
+    "email": "devesh.talegaokar@walchandsangli.ac.in",
+    "url": "",
+    "designation": "Project Staff",
+    "photo": "coordinator-68c061a5c67b5e2007988df8.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68c061bcc67b5e2007988dfa"
+    },
+    "name": "Ms. Juveriya J. Mujawar",
+    "email": "juveriya.mujawar@walchandsangli.ac.in",
+    "url": "",
+    "designation": "Project Staff",
+    "photo": "coordinator-68c061bcc67b5e2007988dfa.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68c061f1c67b5e2007988dfc"
+    },
+    "name": "Mr. Tejas P. Zende",
+    "email": "tejas.zende@walchandsangli.ac.in",
+    "url": "",
+    "designation": "Project Staff",
+    "photo": "coordinator-68c061f1c67b5e2007988dfc.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68c06220c67b5e2007988dfe"
+    },
+    "name": "Mr. Vignesh S. Potdar",
+    "email": "vignesh.potdar@walchansangli.ac.in",
+    "url": "",
+    "designation": "Project Staff",
+    "photo": "coordinator-68c06220c67b5e2007988dfe.jpg",
+    "__v": 0
+  }
+]
