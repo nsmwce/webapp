@@ -1,0 +1,38 @@
+[
+  {
+    "_id": {
+      "$oid": "68bece2cb0e5a081bb6d1655"
+    },
+    "name": "IIT Goa",
+    "url": "https://nsmindia.in/hrd/nodal-centers/iit-goa",
+    "photo": "nodal-68bece2cb0e5a081bb6d1655.png",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68bece88b0e5a081bb6d1657"
+    },
+    "name": "IIT Madras",
+    "url": "https://nsmindia.in/hrd/nodal-centers/iit-madras",
+    "photo": "nodal-68bece88b0e5a081bb6d1657.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68beceb8b0e5a081bb6d1659"
+    },
+    "name": "IIT Palakkad",
+    "url": "https://nsmindia.in/hrd/nodal-centers/iit-palakkad",
+    "photo": "nodal-68beceb8b0e5a081bb6d1659.png",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68beceddb0e5a081bb6d165b"
+    },
+    "name": "IIT Kharagpur",
+    "url": "https://nsmindia.in/hrd/nodal-centers/iit-kharagpur",
+    "photo": "nodal-68beceddb0e5a081bb6d165b.jpg",
+    "__v": 0
+  }
+]

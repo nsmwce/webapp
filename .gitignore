@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+# /build # We're serving files through github so 
 
 # misc
 .DS_Store

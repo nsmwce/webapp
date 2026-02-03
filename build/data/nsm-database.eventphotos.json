@@ -1,0 +1,112 @@
+[
+  {
+    "_id": {
+      "$oid": "68bed769b0e5a081bb6d167d"
+    },
+    "caption": "FOP at Bharati Vidyapeeth College of Engineering, Pune",
+    "image": "event-68bed769b0e5a081bb6d167d.jpg",
+    "createdAt": {
+      "$date": "2025-09-08T13:17:29.122Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68bed797b0e5a081bb6d1685"
+    },
+    "caption": "FDP at Walchand College of Engineering, Sangli",
+    "image": "event-68bed797b0e5a081bb6d1685.jpg",
+    "createdAt": {
+      "$date": "2025-09-08T13:18:15.646Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68bed819b0e5a081bb6d1687"
+    },
+    "caption": "FDP at YBIT, Sawantwadi ",
+    "image": "event-68bed819b0e5a081bb6d1687.jpg",
+    "createdAt": {
+      "$date": "2025-09-08T13:20:25.512Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68bed8cbb0e5a081bb6d1689"
+    },
+    "caption": "FDP at MET, Nashik",
+    "image": "event-68bed8cbb0e5a081bb6d1689.jpg",
+    "createdAt": {
+      "$date": "2025-09-08T13:23:23.141Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68bed8e6b0e5a081bb6d168b"
+    },
+    "caption": "STP at WCE, Sangli",
+    "image": "event-68bed8e6b0e5a081bb6d168b.jpg",
+    "createdAt": {
+      "$date": "2025-09-08T13:23:50.900Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6961dc5da2517b8a87c87194"
+    },
+    "filename": "1768021085193.jpeg",
+    "caption": "MET, Nashik",
+    "createdAt": {
+      "$date": "2026-01-10T04:58:05.303Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6961dc77a2517b8a87c87196"
+    },
+    "filename": "1768021111503.jpeg",
+    "caption": "VTU, Belgavi",
+    "createdAt": {
+      "$date": "2026-01-10T04:58:31.505Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6961dc91a2517b8a87c87198"
+    },
+    "filename": "1768021137665.jpeg",
+    "caption": "SKNSOE, Pandharpur",
+    "createdAt": {
+      "$date": "2026-01-10T04:58:57.726Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6961dcb3a2517b8a87c8719c"
+    },
+    "filename": "1768021171798.jpeg",
+    "caption": "VPKBIET, Baramati",
+    "createdAt": {
+      "$date": "2026-01-10T04:59:31.845Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6961dce0a2517b8a87c8719e"
+    },
+    "filename": "1768021216202.jpeg",
+    "caption": "SCOE, Manglore",
+    "createdAt": {
+      "$date": "2026-01-10T05:00:16.287Z"
+    },
+    "__v": 0
+  }
+]

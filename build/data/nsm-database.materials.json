@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "683557829345de883adf0e25"
+  },
+  "title": "Introduction to OpenMP",
+  "topic": "openmp",
+  "filename": null,
+  "originalname": null,
+  "url": "https://www.youtube.com/playlist?list=PL3xCBlatwrsWhsdHq3JFJiuQ60gHzYtFU",
+  "createdAt": {
+    "$date": "2025-05-27T06:11:14.615Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683557f99345de883adf0e28"
+  },
+  "title": "Introduction to CUDA",
+  "topic": "cuda",
+  "filename": null,
+  "originalname": null,
+  "url": "https://www.youtube.com/playlist?list=PL3xCBlatwrsWQP9ZeCwpmxgHx6BaqXQ1a",
+  "createdAt": {
+    "$date": "2025-05-27T06:13:13.022Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6879f4f36a3940bbe660858a"
+  },
+  "title": "Introduction to Parallel Computing - MPI",
+  "topic": "mpi",
+  "filename": null,
+  "originalname": null,
+  "url": "https://www.youtube.com/watch?v=hxQNTYC_Z0c&list=PLaD3lWBDCqzMFWto4Jalwo5-yf9751e_C",
+  "createdAt": {
+    "$date": "2025-07-18T07:17:07.705Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6879f5316a3940bbe660858d"
+  },
+  "title": "Introduction to AI",
+  "topic": "ai",
+  "filename": null,
+  "originalname": null,
+  "url": "https://www.youtube.com/watch?v=GHpchgLoDvI&list=PLp6ek2hDcoNB_YJCruBFjhF79f5ZHyBuz",
+  "createdAt": {
+    "$date": "2025-07-18T07:18:09.158Z"
+  },
+  "__v": 0
+}]
