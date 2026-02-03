@@ -50,7 +50,7 @@ const Events = () => {
               <th style={thStyle}>Location</th>
               <th style={thStyle}>No. Of Participants</th>
               <th style={thStyle}>Agenda</th>
-              {/* <th style={thStyle}>Report</th> */}
+              <th style={thStyle}>Report</th>
             </tr>
           </thead>
           <tbody>
@@ -63,20 +63,24 @@ const Events = () => {
                 <td style={tdStyle}>{event.location}</td>
                 <td style={tdStyle}>{event.participants}</td>
                 <td style={tdStyle}>{event.summary}</td>
-                {/* <td style={tdStyle}>
-                  <a
-                    href={`${STATIC_BASE_URL}/api/events/${event._id}/file`}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      color: "#004080",
-                      textDecoration: "underline",
-                      fontWeight: "500",
-                    }}
-                  >
-                    View Report
-                  </a>
-                </td> */}
+                <td style={tdStyle}>
+                  {event.file ? (
+                    <a
+                      href={`${CDN_BASE}/files/${event.file}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        color: "#004080",
+                        textDecoration: "underline",
+                        fontWeight: "500",
+                      }}
+                    >
+                      View Report
+                    </a>
+                  ) : (
+                    <span style={{ color: "#999" }}>-</span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

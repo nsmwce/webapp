@@ -139,22 +139,28 @@ const Home = () => {
             textAlign: "left",
           }}
         >
-          {importantLinks.map((link, index) => (
-            <li key={index} style={{ marginBottom: "10px" }}>
-              <a
-                href={link.url || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "#004080",
-                  textDecoration: "none",
-                  fontWeight: "500",
-                }}
-              >
-                {link.title}
-              </a>
-            </li>
-          ))}
+          {importantLinks.map((link, index) => {
+            // Use file from CDN if available, otherwise use URL
+            const href = link.file 
+              ? `${CDN_BASE}/files/${link.file}`
+              : (link.url || "#");
+            return (
+              <li key={index} style={{ marginBottom: "10px" }}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: "#004080",
+                    textDecoration: "none",
+                    fontWeight: "500",
+                  }}
+                >
+                  {link.title}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
