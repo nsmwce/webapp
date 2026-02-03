@@ -23,6 +23,7 @@
     "build": "react-scripts build",
     "postbuild": "node scripts/finalize-build.js",
     "verify": "node scripts/verify-cdn-urls.js",
+    "purge": "node scripts/purge-cdn.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "admin": "node admin-server.js",
