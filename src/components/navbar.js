@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoInformationCircle } from "react-icons/io5";
 import { FaCalendarAlt } from "react-icons/fa";
-import { MdOutlineContactMail } from "react-icons/md";
-import { MdPhotoLibrary } from "react-icons/md";
+import { MdOutlineContactMail, MdPhotoLibrary } from "react-icons/md";
 import { PiChalkboardTeacherBold } from "react-icons/pi";
+
+const CDN_BASE = process.env.NODE_ENV === 'production' 
+  ? 'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main/build'
+  : '';
 
 const navItems = [
   { label: "About Us", path: "/#aboutus", icon: <IoInformationCircle /> },
@@ -51,7 +54,7 @@ const Navbar = () => {
         }}
       >
         <img
-          src="/wce-logo.png"
+          src={`${CDN_BASE}/wce-logo.png`}
           alt="Logo 1"
           style={{ height: "60px", marginRight: "10px" }}
         />
@@ -64,7 +67,7 @@ const Navbar = () => {
           </h3>
         </div>
         <img
-          src="/nsm-logo.png"
+          src={`${CDN_BASE}/nsm-logo.png`}
           alt="Logo 2"
           style={{ height: "60px", marginLeft: "10px" }}
         />
