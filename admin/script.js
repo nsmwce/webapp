@@ -525,26 +525,25 @@ async function purgeCdnCache() {
     }
     
     try {
-        // Note: jsDelivr purge endpoint - purge the build folder
-        const purgeUrl = 'https://purge.jsdelivr.net/gh/nsmwce/webapp@main/build';
-        
-        const response = await fetch(purgeUrl, {
+        // Call local server endpoint (avoids CORS issues)
+        const response = await fetch('/api/purge-cdn', {
             method: 'POST'
         });
         
-        if (response.ok || response.status === 200) {
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
             alert(
-                '✅ CDN cache purge initiated!\n\n' +
-                'Status: Purge request sent successfully\n\n' +
+                '✅ CDN cache purge complete!\n\n' +
+                `Purged: ${result.successCount} files\n` +
+                `Failed: ${result.failedCount} files\n\n` +
                 'Timeline:\n' +
                 '- Wait 5-10 minutes for full propagation\n' +
                 '- Test your site after waiting\n' +
-                '- Clear browser cache if needed\n\n' +
-                'Monitor status at:\n' +
-                'https://www.jsdelivr.com/tools/purge'
+                '- Clear browser cache if needed'
             );
         } else {
-            throw new Error('Purge request failed');
+            throw new Error(result.error || 'Purge request failed');
         }
     } catch (error) {
         alert(
@@ -552,7 +551,7 @@ async function purgeCdnCache() {
             'Please purge manually at:\n' +
             'https://www.jsdelivr.com/tools/purge\n\n' +
             'Enter this URL:\n' +
-            'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main\n\n' +
+            'https://cdn.jsdelivr.net/gh/nsmwce/webapp@main/build\n\n' +
             'Error: ' + error.message
         );
     }

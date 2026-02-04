@@ -230,6 +230,84 @@ app.post('/api/build', (req, res) => {
   });
 });
 
+// POST purge CDN cache (proxy to avoid CORS issues)
+app.post('/api/purge-cdn', async (req, res) => {
+  const https = require('https');
+  
+  const filesToPurge = [
+    '/static/js/main.js',
+    '/static/css/main.css',
+    '/data/nsm-database.coordinators.json',
+    '/data/nsm-database.events.json',
+    '/data/nsm-database.eventphotos.json',
+    '/data/nsm-database.importantlinks.json',
+    '/data/nsm-database.materials.json',
+    '/data/nsm-database.sisternodals.json',
+    '/wce-logo.png',
+    '/nsm-logo.png',
+    '/favicon.ico',
+  ];
+  
+  // Add images from public/images
+  const imagesDir = path.join(__dirname, 'public', 'images');
+  if (fs.existsSync(imagesDir)) {
+    fs.readdirSync(imagesDir).forEach(file => {
+      if (!file.startsWith('.')) {
+        filesToPurge.push(`/images/${file}`);
+      }
+    });
+  }
+  
+  // Add files from public/files
+  const filesDir = path.join(__dirname, 'public', 'files');
+  if (fs.existsSync(filesDir)) {
+    fs.readdirSync(filesDir).forEach(file => {
+      if (!file.startsWith('.')) {
+        filesToPurge.push(`/files/${file}`);
+      }
+    });
+  }
+  
+  const PURGE_BASE = 'https://purge.jsdelivr.net/gh/nsmwce/webapp@main/build';
+  
+  const purgeUrl = (url) => {
+    return new Promise((resolve) => {
+      const req = https.request(url, { method: 'GET' }, (response) => {
+        resolve({ status: response.statusCode });
+      });
+      req.on('error', (e) => resolve({ error: e.message }));
+      req.end();
+    });
+  };
+  
+  let success = 0;
+  let failed = 0;
+  const results = [];
+  
+  for (const file of filesToPurge) {
+    const url = `${PURGE_BASE}${file}`;
+    const result = await purgeUrl(url);
+    if (result.status === 200) {
+      success++;
+      results.push({ file, status: 'ok' });
+    } else {
+      failed++;
+      results.push({ file, status: 'failed', error: result.error || result.status });
+    }
+  }
+  
+  // Also purge root
+  await purgeUrl(PURGE_BASE);
+  
+  res.json({
+    success: true,
+    message: `Purged ${success} files, ${failed} failed`,
+    totalFiles: filesToPurge.length,
+    successCount: success,
+    failedCount: failed
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`\n========================================`);
   console.log(`Admin server running at http://localhost:${PORT}`);
