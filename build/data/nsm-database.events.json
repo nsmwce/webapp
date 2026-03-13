@@ -238,5 +238,80 @@
       "$date": "2026-01-10T04:54:21.845Z"
     },
     "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "69b3e53d59b75c5326e1b"
+    },
+    "title": "Faculty Development Program",
+    "month": "January",
+    "year": "2026",
+    "location": "DKTE, Ichalkaranji",
+    "participants": "32",
+    "summary": "The FDP aimed to provide faculty members with knowledge and hands-on experience with knowledge and hands-on experience in cutting-edge technologies such as parallel programming, artificial intelligence and computing architecture. The sessions were conducted by renowed experts from academia and industry.",
+    "createdAt": {
+      "$date": "2026-03-13T10:21:49.315Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "69b3e5a590523a5619676"
+    },
+    "title": "Faculty Orientation Program",
+    "month": "January",
+    "year": "2026",
+    "location": "FC & Bhaskarach arya Pratishthan a, Pune",
+    "participants": "28",
+    "summary": "This program provided faculty members with comprehensive exposure to High Performance Computing (HPC) and Artificial Intelligence (AI), through expert speakers\n",
+    "createdAt": {
+      "$date": "2026-03-13T10:23:33.379Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "69b3e5d1c573f2192de19"
+    },
+    "title": "Faculty Development Program",
+    "month": "February",
+    "year": "2026",
+    "location": "MRIT, Mysuru",
+    "participants": "49",
+    "summary": "The program aimed at equipping faculty members and cutting edge knowledge, research insights and hands-on skills in HPC and AI.\n",
+    "createdAt": {
+      "$date": "2026-03-13T10:24:17.138Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "69b3e5fc6d8de471580d38"
+    },
+    "title": "Faculty Orientation Program",
+    "month": "February",
+    "year": "2026",
+    "location": "R.I.T. Islampur",
+    "participants": "43",
+    "summary": "The program aimed at equipping faculty members and cutting edge knowledge, research insights and hands-on skills in HPC and AI.\n",
+    "createdAt": {
+      "$date": "2026-03-13T10:25:00.174Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "69b3e61f45a10bdabe93a8"
+    },
+    "title": "Faculty Development Program",
+    "month": "February",
+    "year": "2026",
+    "location": "AISSMS, Pune",
+    "participants": "53",
+    "summary": "The Program aimed to provide a platform for educators and researchers to gain insights into the transformative role of High Performance Computing (HPC) in academia and research. The program focused on emerging technologies such as Artificial Intelligence (AI) and their integration into educational and research domains.",
+    "createdAt": {
+      "$date": "2026-03-13T10:25:35.490Z"
+    },
+    "__v": 0
   }
 ]

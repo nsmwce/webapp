@@ -34,5 +34,17 @@
     "url": null,
     "file": "link-syllabus-sample-for-sy-aiml-68c079b000dcd18353c39889.pdf",
     "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "69b3e6555a3992cd46f3c8"
+    },
+    "title": "Updated Report on Activities",
+    "url": "",
+    "file": "file-1773397589069-igbu1s.pdf",
+    "createdAt": {
+      "$date": "2026-03-13T10:26:29.115Z"
+    },
+    "__v": 0
   }
 ]

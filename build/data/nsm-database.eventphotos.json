@@ -56,30 +56,6 @@
   },
   {
     "_id": {
-      "$oid": "6961dc5da2517b8a87c87194"
-    },
-    "filename": "1768021085193.jpeg",
-    "caption": "MET, Nashik",
-    "createdAt": {
-      "$date": "2026-01-10T04:58:05.303Z"
-    },
-    "__v": 0,
-    "image": "image-1770123596706-nx6iaa.png"
-  },
-  {
-    "_id": {
-      "$oid": "6961dc77a2517b8a87c87196"
-    },
-    "filename": "1768021111503.jpeg",
-    "caption": "VTU, Belgavi",
-    "createdAt": {
-      "$date": "2026-01-10T04:58:31.505Z"
-    },
-    "__v": 0,
-    "image": "image-1770123596706-nx6iaa.png"
-  },
-  {
-    "_id": {
       "$oid": "6961dc91a2517b8a87c87198"
     },
     "filename": "1768021137665.jpeg",
@@ -88,7 +64,7 @@
       "$date": "2026-01-10T04:58:57.726Z"
     },
     "__v": 0,
-    "image": "image-1770123596706-nx6iaa.png"
+    "image": "image-1773396835057-1s7786.jpeg"
   },
   {
     "_id": {
@@ -100,7 +76,7 @@
       "$date": "2026-01-10T04:59:31.845Z"
     },
     "__v": 0,
-    "image": "image-1770123596706-nx6iaa.png"
+    "image": "image-1773396841119-8p7hq.jpeg"
   },
   {
     "_id": {
@@ -112,6 +88,28 @@
       "$date": "2026-01-10T05:00:16.287Z"
     },
     "__v": 0,
-    "image": "image-1770123596706-nx6iaa.png"
+    "image": "image-1773396846720-qdw7d.jpeg"
+  },
+  {
+    "_id": {
+      "$oid": "69b3e3ab66e58871bf41e"
+    },
+    "caption": "MRIT, Mysuru",
+    "image": "image-1773396907615-kyk26j.jpeg",
+    "createdAt": {
+      "$date": "2026-03-13T10:15:07.634Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "69b3e40839eb69ce6cc82"
+    },
+    "caption": "VTU, Belgaum",
+    "image": "image-1773397000621-kcde3i.jpeg",
+    "createdAt": {
+      "$date": "2026-03-13T10:16:40.640Z"
+    },
+    "__v": 0
   }
 ]
